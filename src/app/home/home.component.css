@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background-image {
+    background-image: url('/assets/patte.png');
+    background-size: cover;
+    background-position: center;
+    margin-top: -30px;
+    z-index: 10000;
+  }
+  
+  .titre{
+    font-size: 3rem;
+    color: #fdfdfd;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .container {
+    margin-top : 450px;
+  }
