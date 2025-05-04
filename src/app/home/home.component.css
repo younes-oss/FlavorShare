@@ -6,15 +6,33 @@
     background-image: url('/assets/patte.png');
     background-size: cover;
     background-position: center;
-    margin-top: -30px;
-    z-index: 10000;
+    
   }
+
+  
   
   .titre{
     font-size: 3rem;
     color: #fdfdfd;
     text-align: center;
-    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    left: 34%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+    text-decoration-color: #fdfdfd;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    padding: 20px;
+    border-radius: 10px;
+
+
   }
   .container {
     margin-top : 450px;

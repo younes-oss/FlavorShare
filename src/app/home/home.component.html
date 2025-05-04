@@ -1,49 +1,140 @@
-<div class="min-h-screen flex flex-col items-center justify-center background-image text-white">
-    <h1 class="titre text-6xl font-bold mb-8 text-center">Enjoy Choosing Your<br> Favorite Recipe</h1>
+
+  
+<div class="hh min-h-screen flex flex-col items-center justify-center background-image text-white">
+    <h1 class="titre text-6xl font-bold mb-8 text-center">Enjoy Choosing <br>Your<br> Favorite Recipe</h1>
     <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl px-4">
+      
       <!-- Recipe Card 1 -->
-       
-      <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <img src="/assets/recipe-image-1.jpg" alt="Recipe 1" class="w-full h-48 object-cover">
+      <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden" (click)="goToDetail(recipe)">
+        <img [src]="recipes[0]?.strMealThumb" alt="{{ recipes[0]?.strMeal }}" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-xl font-semibold">Recipe Name 1</h2>
+          <h2 class="text-xl font-semibold">{{ recipes[0]?.strMeal }}</h2>
+          
+          <!-- Stars -->
           <div class="flex items-center mt-2">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <ng-container *ngFor="let star of [].constructor(recipes[0]?.rating)">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+            <ng-container *ngFor="let star of [].constructor(5 - recipes[0]?.rating)">
+              <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
           </div>
         </div>
       </div>
+  
       <!-- Recipe Card 2 -->
       <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <img src="/assets/recipe-image-2.jpg" alt="Recipe 2" class="w-full h-48 object-cover">
+        <img [src]="recipes[1]?.strMealThumb" alt="{{ recipes[1]?.strMeal }}" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-xl font-semibold">Recipe Name 2</h2>
+          <h2 class="text-xl font-semibold">{{ recipes[1]?.strMeal }}</h2>
+          
+          <!-- Stars -->
           <div class="flex items-center mt-2">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <ng-container *ngFor="let star of [].constructor(recipes[1]?.rating)">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+            <ng-container *ngFor="let star of [].constructor(5 - recipes[1]?.rating)">
+              <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
           </div>
         </div>
       </div>
+  
       <!-- Recipe Card 3 -->
       <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <img src="/assets/recipe-image-3.jpg" alt="Recipe 3" class="w-full h-48 object-cover">
+        <img [src]="recipes[2]?.strMealThumb" alt="{{ recipes[2]?.strMeal }}" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-xl font-semibold">Recipe Name 3</h2>
+          <h2 class="text-xl font-semibold">{{ recipes[2]?.strMeal }}</h2>
+          
+          <!-- Stars -->
           <div class="flex items-center mt-2">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <ng-container *ngFor="let star of [].constructor(recipes[2]?.rating)">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+            <ng-container *ngFor="let star of [].constructor(5 - recipes[2]?.rating)">
+              <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
           </div>
         </div>
       </div>
+
+      <!-- Recipe Card 4 -->
+      <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <img [src]="recipes[3]?.strMealThumb" alt="{{ recipes[3]?.strMeal }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">{{ recipes[3]?.strMeal }}</h2>
+          
+          <!-- Stars -->
+          <div class="flex items-center mt-2">
+            <ng-container *ngFor="let star of [].constructor(recipes[3]?.rating)">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+            <ng-container *ngFor="let star of [].constructor(5 - recipes[3]?.rating)">
+              <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe Card 4 -->
+      <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <img [src]="recipes[4]?.strMealThumb" alt="{{ recipes[4]?.strMeal }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">{{ recipes[4]?.strMeal }}</h2>
+          
+          <!-- Stars -->
+          <div class="flex items-center mt-2">
+            <ng-container *ngFor="let star of [].constructor(recipes[4]?.rating)">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+            <ng-container *ngFor="let star of [].constructor(5 - recipes[4]?.rating)">
+              <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <!-- Recipe Card 1 -->
+      <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <img [src]="recipes[5]?.strMealThumb" alt="{{ recipes[5]?.strMeal }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">{{ recipes[5]?.strMeal }}</h2>
+          
+          <!-- Stars -->
+          <div class="flex items-center mt-2">
+            <ng-container *ngFor="let star of [].constructor(recipes[5]?.rating)">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+            <ng-container *ngFor="let star of [].constructor(5 - recipes[5]?.rating)">
+              <svg class="w-4 h-4 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+  
     </div>
   </div>
   
