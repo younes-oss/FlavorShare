@@ -2,17 +2,18 @@ import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeService } from '../services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
   recipes: any[] = [];
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService , private router: Router) {}
 
   ngOnInit() {
     this.recipeService.getRecipes().subscribe(data => {
@@ -22,6 +23,10 @@ export class HomeComponent implements OnInit{
       }));
       console.log(this.recipes);
     });
+  }
+
+  goToDetail(recipe: any) {
+    this.router.navigate(['/detail', recipe.idMeal]);
   }
   
 }

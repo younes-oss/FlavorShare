@@ -5,10 +5,12 @@
     <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl px-4">
       
       <!-- Recipe Card 1 -->
-      <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden" (click)="goToDetail(recipe)">
+      <div
+        class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer"
+        [routerLink]="['/detail', recipes[0]?.idMeal]">
         <img [src]="recipes[0]?.strMealThumb" alt="{{ recipes[0]?.strMeal }}" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-xl font-semibold">{{ recipes[0]?.strMeal }}</h2>
+            <h2 class="text-xl font-semibold">{{ recipes[0]?.strMeal }}</h2>
           
           <!-- Stars -->
           <div class="flex items-center mt-2">
